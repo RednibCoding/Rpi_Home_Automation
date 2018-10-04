@@ -1,7 +1,7 @@
 
 # class that reeds config.ini
 
-from configparser import ConfigParser
+from kivy.config import ConfigParser
 
 class Config(ConfigParser):
 	def __init__(self, cfgFile):
