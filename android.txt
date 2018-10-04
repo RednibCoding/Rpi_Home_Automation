@@ -1,0 +1,3 @@
+title=<PiController>
+author=<Michael Binder>
+orientation=<portrait|landscape>
