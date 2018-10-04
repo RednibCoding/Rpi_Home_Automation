@@ -56,27 +56,21 @@ class ClientApp(TabbedPanel):
 
 	def on_btn8_click(self):
 		myMessage="Button 8 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn9_click(self):
 		myMessage="Button 9 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn10_click(self):
 		myMessage="Button 10 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn11_click(self):
 		myMessage="Button 11 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn12_click(self):
 		myMessage="Button 12 clicked"
-		self._tcp.sendMsg(myMessage)
 		
 	def on_btn13_click(self):
 		myMessage="Button 13 clicked"
-		self._tcp.sendMsg(myMessage)
 		
 	def on_btnSaveConfig_click(self):
 		self.inputBoxesToCfg()
