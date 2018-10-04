@@ -16,11 +16,18 @@ gpio.setup(pin, gpio.OUT)
 
 myTcp.bindSocket("0.0.0.0")
 
+state=False
+
 while True:
     msg=myTcp.recvMsg()
 
     if "Button 1" in msg:
-        gpio.output(pinNum. gpio.HIGH)
+		if not state:
+			gpio.output(pinNum. gpio.HIGH)
+			state=True
+		elif state:
+			gpio.output(pinNum. gpio.LOW)
+			state=False			
     elif "Button 2" in msg:
         gpio.output(pinNum. gpio.LOW)
     print(msg)
