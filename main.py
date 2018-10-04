@@ -21,9 +21,12 @@ class ClientApp(TabbedPanel):
 		self._cfg=Config("config.ini")
 		self._cfg.loadFile()
 		self.cfgToInputBoxes()
+<<<<<<< HEAD
 		rpiIp=self._cfg._rpiIp
 		rpiPort=int(self._cfg._rpiPort)
 		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
+=======
+>>>>>>> d7e648bf208d8f27911cd1c9fc8d962028772cc0
 
 	# button click events
 	def on_btn1_click(self):
@@ -82,10 +85,13 @@ class ClientApp(TabbedPanel):
 		self.inputBoxesToCfg()
 		self._cfg.update()
 		self._cfg.saveFile("test.ini")
+<<<<<<< HEAD
 		popup = Popup(title='Warning',
 		content=Label(text='Changes take effect after restart'),
 					size_hint=(None, None), size=(400, 400))
 		popup.open()
+=======
+>>>>>>> d7e648bf208d8f27911cd1c9fc8d962028772cc0
 
 	# helper
 	
