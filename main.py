@@ -49,28 +49,6 @@ class ClientApp(TabbedPanel):
 	def on_btn6_click(self):
 		myMessage="Button 6 clicked"
 		self._tcp.sendMsg(myMessage)
-
-	def on_btn7_click(self):
-		myMessage="Button 7 clicked"
-		self._tcp.sendMsg(myMessage)
-
-	def on_btn8_click(self):
-		myMessage="Button 8 clicked"
-
-	def on_btn9_click(self):
-		myMessage="Button 9 clicked"
-
-	def on_btn10_click(self):
-		myMessage="Button 10 clicked"
-
-	def on_btn11_click(self):
-		myMessage="Button 11 clicked"
-
-	def on_btn12_click(self):
-		myMessage="Button 12 clicked"
-		
-	def on_btn13_click(self):
-		myMessage="Button 13 clicked"
 		
 	def on_btnSaveConfig_click(self):
 		self.inputBoxesToCfg()
@@ -95,12 +73,12 @@ class ClientApp(TabbedPanel):
 		self._cfg._btnTexts[6]=self.ids.btn6.text
 		self._cfg._btnTexts[0]=self.ids.btn7.text
 		# Button Text Layout
-		self._cfg._btnTexts[1]=self.ids.btn8.text
-		self._cfg._btnTexts[2]=self.ids.btn9.text
-		self._cfg._btnTexts[3]=self.ids.btn10.text
-		self._cfg._btnTexts[4]=self.ids.btn11.text
-		self._cfg._btnTexts[5]=self.ids.btn12.text
-		self._cfg._btnTexts[6]=self.ids.btn13.text
+		self._cfg._btnTexts[1]=self.ids.btn1Layout.text
+		self._cfg._btnTexts[2]=self.ids.btn2Layout.text
+		self._cfg._btnTexts[3]=self.ids.btn3Layout.text
+		self._cfg._btnTexts[4]=self.ids.btn4Layout.text
+		self._cfg._btnTexts[5]=self.ids.btn5Layout.text
+		self._cfg._btnTexts[6]=self.ids.btn6Layout.text
 		# Button Switch Codes
 		self._cfg._switchCodes[0]=self.ids.btn1SwitchCode.text
 		self._cfg._switchCodes[1]=self.ids.btn2SwitchCode.text
@@ -127,12 +105,12 @@ class ClientApp(TabbedPanel):
 		self.ids.btn6.text=self._cfg._btnTexts[6]
 		self.ids.btn7.text=self._cfg._btnTexts[0]
 		# Button Text Layout
-		self.ids.btn8.text=self._cfg._btnTexts[1]
-		self.ids.btn9.text=self._cfg._btnTexts[2]
-		self.ids.btn10.text=self._cfg._btnTexts[3]
-		self.ids.btn11.text=self._cfg._btnTexts[4]
-		self.ids.btn12.text=self._cfg._btnTexts[5]
-		self.ids.btn13.text=self._cfg._btnTexts[6]
+		self.ids.btn1Layout.text=self._cfg._btnTexts[1]
+		self.ids.btn2Layout.text=self._cfg._btnTexts[2]
+		self.ids.btn3Layout.text=self._cfg._btnTexts[3]
+		self.ids.btn4Layout.text=self._cfg._btnTexts[4]
+		self.ids.btn5Layout.text=self._cfg._btnTexts[5]
+		self.ids.btn6Layout.text=self._cfg._btnTexts[6]
 		# Button Switch Codes
 		self.ids.btn1SwitchCode.text=self._cfg._switchCodes[0]
 		self.ids.btn2SwitchCode.text=self._cfg._switchCodes[1]
