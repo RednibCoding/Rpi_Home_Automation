@@ -75,7 +75,7 @@ class ClientApp(TabbedPanel):
 	def on_btnSaveConfig_click(self):
 		self.inputBoxesToCfg()
 		self._cfg.update()
-		self._cfg.saveFile("test.ini")
+		self._cfg.saveFile("config.ini")
 		popup = Popup(title='File saved!',
 		content=Label(text='Restart neccesary'), size_hint=(None, None), size=(410, 410))
 		popup.open()
