@@ -59,7 +59,7 @@
 		GridLayout:
 			id: gridLayout
 			cols: 3
-			row_default_height:60
+			row_default_height:80
 			
 			Button:
 				id: btn8
@@ -95,6 +95,17 @@
 				text: 'Hello 13'
 				on_press: root.on_btn13_click()
 				background_color: 1, .6, .4, .85
+
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveLayout
+					text: 'Save'
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width, self.parent.height/2-self.height/2
+					width: self.parent.width
+					height: self.parent.height/2
 	
 	TabbedPanelItem:
 		text: 'Network'
@@ -103,7 +114,7 @@
 			id: gridLayout
 			cols: 2
 			size: root.width * 0.8, root.height * 0.8
-			row_default_height: 50
+			row_default_height: 80
 			row_force_default: True
 			
 			Label:
@@ -128,6 +139,17 @@
 				multiline: False
 				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
 				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveNetwork
+					text: 'Save'
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height/2+self.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.2
+				
 	TabbedPanelItem:
 		text: 'Switch Codes'
 		id: switchCodes
@@ -135,7 +157,7 @@
 			id: gridLayout
 			cols: 2
 			size: root.width * 0.8, root.height * 0.8
-			row_default_height: 50
+			row_default_height: 65
 			row_force_default: True
 			
 			Label:
@@ -187,6 +209,17 @@
 				multiline: False
 				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
 				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveSwitchCodes
+					text: 'Save'
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.1
+				
 	TabbedPanelItem:
 		text: 'Cron'
 		id: cron
@@ -194,7 +227,7 @@
 			id: gridLayout
 			cols: 2
 			size: root.width * 0.8, root.height * 0.8
-			row_default_height: 50
+			row_default_height: 80
 			row_force_default: True
 			
 			Label:
@@ -217,6 +250,17 @@
 				text: "00.00"
 				multiline: False
 				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveCron
+					text: 'Save'
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height/2+self.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.2
 			
 	TabbedPanelItem:
 		text: 'About'
