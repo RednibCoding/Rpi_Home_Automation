@@ -24,7 +24,6 @@ class ClientApp(TabbedPanel):
 		rpiIp=self._cfg._rpiIp
 		rpiPort=int(self._cfg._rpiPort)
 		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
-		#self._tcp=Tcp(port=5000, bufferLen=1024, ip="192.168.178.42")
 
 	# button click events
 	def on_btn1_click(self):
@@ -83,6 +82,7 @@ class ClientApp(TabbedPanel):
 		self.inputBoxesToCfg()
 		self._cfg.update()
 		self._cfg.saveFile("test.ini")
+
 		popup = Popup(title='Warning',
 		content=Label(text='Restart neccesary'), size_hint=(None, None), size=(400, 400))
 		popup.open()
