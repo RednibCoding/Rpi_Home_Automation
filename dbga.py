@@ -4,7 +4,7 @@
 # also adb has to be installed on the dev machine (ubuntu: sudo apt-get install adb)
 #
 # you can edit grep tags to change the output (currently, only python errors
-# and it's occurence will be displayed)
+# and their occurence will be displayed)
 
 import os
 os.system("adb shell logcat | grep -E 'Traceback|File '")
