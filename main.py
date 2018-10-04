@@ -21,10 +21,19 @@ class ClientApp(TabbedPanel):
 		self._cfg=Config("config.ini")
 		self._cfg.loadFile()
 		self.cfgToInputBoxes()
+<<<<<<< HEAD
 		rpiIp=self._cfg._rpiIp
 		rpiPort=int(self._cfg._rpiPort)
 		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
 		#self._tcp=Tcp(port=5000, bufferLen=1024, ip="192.168.178.42")
+=======
+<<<<<<< HEAD
+		rpiIp=self._cfg._rpiIp
+		rpiPort=int(self._cfg._rpiPort)
+		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
+=======
+>>>>>>> d7e648bf208d8f27911cd1c9fc8d962028772cc0
+>>>>>>> 0463f5d9d40fcc8cdfd3e5a34d3b6642d2511813
 
 	# button click events
 	def on_btn1_click(self):
@@ -83,9 +92,19 @@ class ClientApp(TabbedPanel):
 		self.inputBoxesToCfg()
 		self._cfg.update()
 		self._cfg.saveFile("test.ini")
+<<<<<<< HEAD
 		popup = Popup(title='Warning',
 		content=Label(text='Restart neccesary'), size_hint=(None, None), size=(400, 400))
 		popup.open()
+=======
+<<<<<<< HEAD
+		popup = Popup(title='Warning',
+		content=Label(text='Changes take effect after restart'),
+					size_hint=(None, None), size=(400, 400))
+		popup.open()
+=======
+>>>>>>> d7e648bf208d8f27911cd1c9fc8d962028772cc0
+>>>>>>> 0463f5d9d40fcc8cdfd3e5a34d3b6642d2511813
 
 	# helper
 	
