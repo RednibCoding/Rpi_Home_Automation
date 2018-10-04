@@ -56,39 +56,31 @@ class ClientApp(TabbedPanel):
 
 	def on_btn8_click(self):
 		myMessage="Button 8 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn9_click(self):
 		myMessage="Button 9 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn10_click(self):
 		myMessage="Button 10 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn11_click(self):
 		myMessage="Button 11 clicked"
-		self._tcp.sendMsg(myMessage)
 
 	def on_btn12_click(self):
 		myMessage="Button 12 clicked"
-		self._tcp.sendMsg(myMessage)
 		
 	def on_btn13_click(self):
 		myMessage="Button 13 clicked"
-		self._tcp.sendMsg(myMessage)
 		
 	def on_btnSaveConfig_click(self):
 		self.inputBoxesToCfg()
 		self._cfg.update()
 		self._cfg.saveFile("test.ini")
-
-		popup = Popup(title='Warning',
-		content=Label(text='Restart neccesary'), size_hint=(None, None), size=(400, 400))
+		popup = Popup(title='File saved!',
+		content=Label(text='Restart neccesary'), size_hint=(None, None), size=(410, 410))
 		popup.open()
 
 	# helper
-	
 	def inputBoxesToCfg(self):
 		# Network
 		self._cfg._rpiIp=self.ids.rpiIp.text
@@ -116,13 +108,6 @@ class ClientApp(TabbedPanel):
 		self._cfg._switchCodes[3]=self.ids.btn4SwitchCode.text
 		self._cfg._switchCodes[4]=self.ids.btn5SwitchCode.text
 		self._cfg._switchCodes[5]=self.ids.btn6SwitchCode.text
-		# Lables Button Switch Codes
-		self.ids.btn1.text=self.ids.lblBtn1SwitchCode.text
-		self.ids.btn2.text=self.ids.lblBtn2SwitchCode.text
-		self.ids.btn3.text=self.ids.lblBtn3SwitchCode.text
-		self.ids.btn4.text=self.ids.lblBtn4SwitchCode.text
-		self.ids.btn5.text=self.ids.lblBtn5SwitchCode.text
-		self.ids.btn6.text=self.ids.lblBtn6SwitchCode.text
 		# Cron
 		self._cfg._cronEnabled=self.ids.cronEnabled.active
 		self._cfg._cronTurnOn=self.ids.cronTurnOn.text
