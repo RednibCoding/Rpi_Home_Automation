@@ -50,6 +50,10 @@ class ClientApp(TabbedPanel):
 		myMessage="Button 6 clicked"
 		self._tcp.sendMsg(myMessage)
 		
+	def on_btn7_click(self):
+		myMessage="Button 6 clicked"
+		self._tcp.sendMsg(myMessage)
+		
 	def on_btnSaveConfig_click(self):
 		self.inputBoxesToCfg()
 		self._cfg.update()
