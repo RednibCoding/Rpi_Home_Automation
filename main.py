@@ -70,7 +70,7 @@ class ClientApp(TabbedPanel):
 		rpiPort=int(self._cfg._rpiPort)
 		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
 
-	# helper
+
 	def inputBoxesToCfg(self):
 		# Network
 		self._cfg._rpiIp=self.ids.rpiIp.text
