@@ -6,30 +6,56 @@
 
 from tcp import Tcp
 import RPi.GPIO as gpio
+import sys
 
-myTcp=Tcp(port=5000, bufferLen=1024)
+myTcp=Tcp(port=5000, bufferLen=1024, ip="0.0.0.0")
 
 gpio.setwarnings(False)
 gpio.setmode(gpio.BCM)
-pin=27
-gpio.setup(pin, gpio.OUT)
+oPins=[None]*2
+oPins[0]=27
+
+gpio.setup(oPins[0], gpio.OUT)
+
+for i in range(len(oPins)):
+	if oPins[i]:
+		gpio.setup(oPins[i], gpio.OUT)
 
 myTcp.bindSocket("0.0.0.0")
 
-state=False
+def isOutputPinHigh(pin):
+    return gpio.input(pin)
 
-while True:
-    msg=myTcp.recvMsg()
+print("Server running:")
+print("")
 
-    if "Button 1" in msg:
-		if not state:
-			gpio.output(pinNum. gpio.HIGH)
-			state=True
-		elif state:
-			gpio.output(pinNum. gpio.LOW)
-			state=False			
-    elif "Button 2" in msg:
-        gpio.output(pinNum. gpio.LOW)
-    print(msg)
+try:
+	while True:
+		msg=myTcp.recvMsg()
+		
+		if "Button 1" in msg:
+			if not isOutputPinHigh(oPins[0]):
+				gpio.output(oPins[0], gpio.HIGH)
+			elif isOutputPinHigh(oPins[0]):
+				gpio.output(oPins[0], gpio.LOW)
+		
+		elif "Button 2" in msg:
+			gpio.output(oPins[0], gpio.LOW)
+			
+		elif "ALL_OFF" in msg:
+			for i in range(len(oPins)):
+				if oPins[i]:
+					if isOutputPinHigh(oPins[i]):
+						gpio.output(oPins[i], gpio.LOW)
+			
+
+		print("Incoming message: "+msg)
+except KeyboardInterrupt:
+	gpio.cleanup()
+	print("Exit")
 
 sys.exit()
+    
+
+
+

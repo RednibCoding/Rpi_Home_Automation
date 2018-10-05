@@ -25,42 +25,50 @@ class ClientApp(TabbedPanel):
 		rpiPort=int(self._cfg._rpiPort)
 		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
 
-	# button click events
-	def on_btn1_click(self):
-		myMessage="Button 1 clicked"
-		self._tcp.sendMsg(myMessage)
-
-	def on_btn2_click(self):
-		myMessage="Button 2 clicked"
-		self._tcp.sendMsg(myMessage)
-
-	def on_btn3_click(self):
-		myMessage="Button 3 clicked"
-		self._tcp.sendMsg(myMessage)
-
-	def on_btn4_click(self):
-		myMessage="Button 4 clicked"
-		self._tcp.sendMsg(myMessage)
-
-	def on_btn5_click(self):
-		myMessage="Button 5 clicked"
-		self._tcp.sendMsg(myMessage)
-
-	def on_btn6_click(self):
-		myMessage="Button 6 clicked"
-		self._tcp.sendMsg(myMessage)
-		
-	def on_btn7_click(self):
-		myMessage="Button 6 clicked"
-		self._tcp.sendMsg(myMessage)
-		
-	def on_btnSaveConfig_click(self):
+	def updateSettings(self):
 		self.inputBoxesToCfg()
 		self._cfg.update()
 		self._cfg.saveFile("config.ini")
-		popup = Popup(title='File saved!',
-		content=Label(text='Restart neccesary'), size_hint=(None, None), size=(410, 410))
+		self._cfg.loadFile()
+		self.cfgToInputBoxes()
+	
+	# button click events
+	def on_btn1_click(self):
+		msg=self.ids.btn1SwitchCode.text
+		self._tcp.sendMsg(msg)
+
+	def on_btn2_click(self):
+		msg=self.ids.btn2SwitchCode.text
+		self._tcp.sendMsg(msg)
+
+	def on_btn3_click(self):
+		msg=self.ids.btn3SwitchCode.text
+		self._tcp.sendMsg(msg)
+
+	def on_btn4_click(self):
+		msg=self.ids.btn4SwitchCode.text
+		self._tcp.sendMsg(msg)
+
+	def on_btn5_click(self):
+		msg=self.ids.btn5SwitchCode.text
+		self._tcp.sendMsg(msg)
+
+	def on_btn6_click(self):
+		msg=self.ids.btn6SwitchCode.text
+		self._tcp.sendMsg(msg)
+		
+	def on_btn7_click(self):
+		msg="ALL_OFF"
+		self._tcp.sendMsg(msg)
+		
+	def on_btnSaveConfig_click(self):
+		self.updateSettings()
+		popup = Popup(title='Settings',
+		content=Label(text='Saved!'), size_hint=(None, None), size=(410, 410))
 		popup.open()
+		rpiIp=self._cfg._rpiIp
+		rpiPort=int(self._cfg._rpiPort)
+		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
 
 	# helper
 	def inputBoxesToCfg(self):
