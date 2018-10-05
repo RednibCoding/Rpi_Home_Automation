@@ -12,7 +12,7 @@ myTcp=Tcp(port=5000, bufferLen=1024, ip="0.0.0.0")
 
 gpio.setwarnings(False)
 gpio.setmode(gpio.BCM)
-oPins=[None]*2
+oPins=[None]*4
 oPins[0]=27
 
 gpio.setup(oPins[0], gpio.OUT)
@@ -22,6 +22,7 @@ for i in range(len(oPins)):
 		gpio.setup(oPins[i], gpio.OUT)
 
 myTcp.bindSocket("0.0.0.0")
+
 
 def isOutputPinHigh(pin):
     return gpio.input(pin)
