@@ -3,7 +3,7 @@
 """
 	tcp.py
 	
-author:			Michael Binder
+author:		Michael Binder
 dependencies:	socket, gethostbyname, AF_INET, SOCK_DGRAM
 description:	Handles Tcp/Ip connections for easier use
 """
