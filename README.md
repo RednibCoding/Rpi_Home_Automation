@@ -13,14 +13,14 @@ Supported hardware
 
 Most generic 433MHz capable modules connected via GPIO to a Raspberry Pi. (cost: ~2€)
 
-<img src="readme/433MHzRF.png" width="200" height="200">
+<img src="readme/433MHzRF.png" width="50%" height="50%">
 
 Compatibility
 ------------
 
 Generic 433MHz outlets. (cost: ~ 15€/3pcs)
 
-<img src="readme/433MHzoutlet.png" width="200" height="200">
+<img src="readme/433MHzoutlet.png" width="50%" height="50%">
 
 Supported Chipsets:
 
@@ -46,7 +46,7 @@ Installation (Incomplete)
 
 Each remote outlet can be configured through dip switches. These have to be unique in order to identify them.
 
-<img src="readme/dipswitch.png" width="100" height="100">
+<img src="readme/dipswitch.png" width="50%" height="50%">
 
 Each switch can have two states: *Up* and *Down*.
 
@@ -60,7 +60,7 @@ So in the example below, dip switch 1 and 3 are *On* and switch A is also *On*.
 
 Because A is *On*, B to E have to be *Off*.
 
-<img src="readme/dipswitch_example.png" width="100" height="100">
+<img src="readme/dipswitch_example.png" width="50%" height="50%">
 
 As *On* means 1 and *Off* means 0, the above example would translate to:
 ```
