@@ -147,7 +147,64 @@
 					pos: self.parent.width-self.width/2, self.parent.height
 					width: self.parent.width/1.5
 					height: self.parent.height/1.1
+	TabbedPanelItem:
+		text: 'All Off'
+		id: layout
+		GridLayout:
+			id: gridLayout
+			cols: 2
+			size: root.width * 0.8, root.height * 0.8
+			row_default_height: 65
+			row_force_default: True
+			
+			Label:
+				id: lbl1AllOff
+				text: "Enabled:"
+			CheckBox:
+				id: btn1AllOff
 
+			Label:
+				id: lbl2AllOff
+				text: "Enabled:"
+			CheckBox:
+				id: btn2AllOff
+
+			Label:
+				id: lbl3AllOff
+				text: "Enabled:"
+			CheckBox:
+				id: btn3AllOff
+
+			Label:
+				id: lbl4AllOff
+				text: "Enabled:"
+			CheckBox:
+				id: btn4AllOff
+
+			Label:
+				id: lbl5AllOff
+				text: "Enabled:"
+			CheckBox:
+				id: btn5AllOff
+
+			Label:
+				id: lbl6AllOff
+				text: "Enabled:"
+			CheckBox:
+				id: btn6AllOff
+				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveLayout
+					text: 'Save'
+					text_size: self.width/2, None
+					halign: "center"
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.1
 	
 	TabbedPanelItem:
 		text: 'Network'

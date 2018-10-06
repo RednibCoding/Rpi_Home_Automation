@@ -17,6 +17,7 @@ class Config(ConfigParser):
 		self._rpiPort=0
 		self._remoteCode=0
 		self._btnTexts=[None]*7
+		self._btnsAllOff=[None]*6
 		self._switchCodes=[None]*6
 		self._cronEnabled=False
 		self._cronTurnOn=0.0
@@ -36,7 +37,13 @@ class Config(ConfigParser):
 		self._btnTexts[5]=self.get("Layout", "btn5")
 		self._btnTexts[6]=self.get("Layout", "btn6")
 		self._btnTexts[0]=self.get("Layout", "btnOff")
-
+		# All Off
+		self._btnsAllOff[0]=self.getboolean("All_Off", "btn1AllOff")
+		self._btnsAllOff[1]=self.getboolean("All_Off", "btn2AllOff")
+		self._btnsAllOff[2]=self.getboolean("All_Off", "btn3AllOff")
+		self._btnsAllOff[3]=self.getboolean("All_Off", "btn4AllOff")
+		self._btnsAllOff[4]=self.getboolean("All_Off", "btn5AllOff")
+		self._btnsAllOff[5]=self.getboolean("All_Off", "btn6AllOff")
 		# Switch Codes
 		self._switchCodes[0]=self.get("Switch_Codes", "btn1")
 		self._switchCodes[1]=self.get("Switch_Codes", "btn2")
@@ -62,6 +69,13 @@ class Config(ConfigParser):
 		self.set("Layout", "btn5", self._btnTexts[5])
 		self.set("Layout", "btn6", self._btnTexts[6])
 		self.set("Layout", "btnOff", self._btnTexts[0])
+		# Buttons All Off
+		self.set("All_Off", "btn1AllOff", self._btnsAllOff[0])
+		self.set("All_Off", "btn2AllOff", self._btnsAllOff[1])
+		self.set("All_Off", "btn3AllOff", self._btnsAllOff[2])
+		self.set("All_Off", "btn4AllOff", self._btnsAllOff[3])
+		self.set("All_Off", "btn5AllOff", self._btnsAllOff[4])
+		self.set("All_Off", "btn6AllOff", self._btnsAllOff[5])
 		# Switch Codes
 		self.set("Switch_Codes", "btn1", self._switchCodes[0])
 		self.set("Switch_Codes", "btn2", self._switchCodes[1])

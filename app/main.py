@@ -67,7 +67,14 @@ class ClientApp(TabbedPanel):
 		self._tcp.sendMsg(msg)
 		
 	def on_btn7_click(self):
-		msg="ALL_OFF"
+		msg="ALL_OFF:"
+		states=str(self.ids.btn1AllOff.active)+"|"
+		states=states+str(self.ids.btn2AllOff.active)+"|"
+		states=states+str(self.ids.btn3AllOff.active)+"|"
+		states=states+str(self.ids.btn4AllOff.active)+"|"
+		states=states+str(self.ids.btn5AllOff.active)+"|"
+		states=states+str(self.ids.btn6AllOff.active)
+		msg=msg+states
 		self._tcp.sendMsg(msg)
 		
 	def on_btnSaveConfig_click(self):
@@ -100,6 +107,13 @@ class ClientApp(TabbedPanel):
 		self._cfg._btnTexts[4]=self.ids.btn4Layout.text
 		self._cfg._btnTexts[5]=self.ids.btn5Layout.text
 		self._cfg._btnTexts[6]=self.ids.btn6Layout.text
+		# Buttons All Off
+		self._cfg._btnsAllOff[0]=self.ids.btn1AllOff.active
+		self._cfg._btnsAllOff[1]=self.ids.btn2AllOff.active
+		self._cfg._btnsAllOff[2]=self.ids.btn3AllOff.active
+		self._cfg._btnsAllOff[3]=self.ids.btn4AllOff.active
+		self._cfg._btnsAllOff[4]=self.ids.btn5AllOff.active
+		self._cfg._btnsAllOff[5]=self.ids.btn6AllOff.active
 		# Button Switch Codes
 		self._cfg._switchCodes[0]=self.ids.btn1SwitchCode.text
 		self._cfg._switchCodes[1]=self.ids.btn2SwitchCode.text
@@ -132,6 +146,20 @@ class ClientApp(TabbedPanel):
 		self.ids.btn4Layout.text=self._cfg._btnTexts[4]
 		self.ids.btn5Layout.text=self._cfg._btnTexts[5]
 		self.ids.btn6Layout.text=self._cfg._btnTexts[6]
+		# Buttons All Off
+		self.ids.btn1AllOff.active=self._cfg._btnsAllOff[0]
+		self.ids.btn2AllOff.active=self._cfg._btnsAllOff[1]
+		self.ids.btn3AllOff.active=self._cfg._btnsAllOff[2]
+		self.ids.btn4AllOff.active=self._cfg._btnsAllOff[3]
+		self.ids.btn5AllOff.active=self._cfg._btnsAllOff[4]
+		self.ids.btn6AllOff.active=self._cfg._btnsAllOff[5]
+		# Lables Buttons All Off
+		self.ids.lbl1AllOff.text="Button "+self.ids.btn1.text
+		self.ids.lbl2AllOff.text="Button "+self.ids.btn2.text
+		self.ids.lbl3AllOff.text="Button "+self.ids.btn3.text
+		self.ids.lbl4AllOff.text="Button "+self.ids.btn4.text
+		self.ids.lbl5AllOff.text="Button "+self.ids.btn5.text
+		self.ids.lbl6AllOff.text="Button "+self.ids.btn6.text
 		# Button Switch Codes
 		self.ids.btn1SwitchCode.text=self._cfg._switchCodes[0]
 		self.ids.btn2SwitchCode.text=self._cfg._switchCodes[1]
