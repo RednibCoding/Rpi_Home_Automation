@@ -4,7 +4,7 @@ Rpi Home Automation
 Introduction
 ------------
 
-Rpi Home Automation is a complete setup to automate your home via Raspberry Pi 3, a generic low-cost GPIO RF 433MHz module and generic RF 433 MHz outlets.
+Rpi Home Automation is a complete setup to automate your home via Raspberry Pi 3 B/B+, a generic low-cost GPIO RF 433MHz module and generic RF 433 MHz outlets.
 
 The current state is not usable yet, as it is still under development – so is the README not complete!
 
