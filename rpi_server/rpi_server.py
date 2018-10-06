@@ -3,12 +3,12 @@
 """
 	Rpi Server
 	
-author:			Michael Binder
+author:		Michael Binder
 dependencies:	tcp.py, RPi.GPIO, sys
 description:	Establishes a connection via Tcp/Ip in the local network 
-				and waits for messages sent from the app.
-				Then it evaluates those messages and sends them via the connected 433MHz RF-Module
-				to the 433MHz receivers (eg. 433MHz outlets)
+		and waits for messages sent from the app.
+		Then it evaluates those messages and sends them via the connected 433MHz RF-Module
+		to the 433MHz receivers (eg. 433MHz outlets)
 """
 
 from tcp import Tcp
