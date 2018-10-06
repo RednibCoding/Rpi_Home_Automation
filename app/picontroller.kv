@@ -1,0 +1,318 @@
+
+#	picontroller.kv
+#	
+# author:			Michael Binder
+# dependencies:
+# description:	Layout file for the main.py app.
+#				This file must be named after the main app class
+#				without the suffix: "App". (If there is one)
+
+<ClientApp>:
+	size_hint: 1.0, 1.0
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    do_default_tab: False
+	
+	TabbedPanelItem:
+        text: 'Control'
+		id: control
+		GridLayout:
+			id: gridLayout
+			cols: 3
+			row_default_height:60
+			Button:
+				id: btn1
+				text: 'Hello 1'
+				text_size: self.width/2, None
+				halign: "center"
+				on_press: root.on_btn1_click()
+				
+			Button:
+				id: btn2
+				text: 'Hello 2'
+				text_size: self.width/2, None
+				halign: "center"
+				on_press: root.on_btn2_click()
+				
+			Button:
+				id: btn3
+				text: 'Hello 3'
+				text_size: self.width/2, None
+				halign: "center"
+				on_press: root.on_btn3_click()
+			
+			Button:
+				id: btn4
+				text: 'Hello 4'
+				text_size: self.width/2, None
+				halign: "center"
+				on_press: root.on_btn4_click()
+				
+			Button:
+				id: btn5
+				text: 'Hello 5'
+				text_size: self.width/2, None
+				halign: "center"
+				on_press: root.on_btn5_click()
+				
+			Button:
+				id: btn6
+				text: 'Hello 6'
+				text_size: self.width/2, None
+				halign: "center"
+				on_press: root.on_btn6_click()
+				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: btn7
+					text: 'All OFF'
+					text_size: self.width/2, None
+					halign: "center"
+					on_press: root.on_btn7_click()
+					pos: self.parent.pos
+					height: self.parent.height
+					width: self.parent.width * 3
+					background_normal: ''
+					background_color: 1, .3, .4, .85
+					
+	TabbedPanelItem:
+		text: 'Layout'
+		id: layout
+		GridLayout:
+			id: gridLayout
+			cols: 2
+			size: root.width * 0.8, root.height * 0.8
+			row_default_height: 65
+			row_force_default: True
+			
+			Label:
+				id: lblBtn1Layout
+				text: "Button 1"
+			TextInput:
+				id: btn1Layout
+				text: "Button 1"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn2Layout
+				text: "Button 2"
+			TextInput:
+				id: btn2Layout
+				text: "Button 2"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn3Layout
+				text: "Button 3"
+			TextInput:
+				id: btn3Layout
+				text: "Button 3"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn4Layout
+				text: "Button 4"
+			TextInput:
+				id: btn4Layout
+				text: "Button 4"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn5Layout
+				text: "Button 5"
+			TextInput:
+				id: btn5Layout
+				text: "Button 5"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn6Layout
+				text: "Button 6"
+			TextInput:
+				id: btn6Layout
+				text: "Button 6"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveLayout
+					text: 'Save'
+					text_size: self.width/2, None
+					halign: "center"
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.1
+
+	
+	TabbedPanelItem:
+		text: 'Network'
+		id: network
+		GridLayout:
+			id: gridLayout
+			cols: 2
+			size: root.width * 0.8, root.height * 0.8
+			row_default_height: 80
+			row_force_default: True
+			
+			Label:
+				text: "Rpi Ip Address"
+			TextInput:
+				id: rpiIp
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				text: "Rpi Port"
+			TextInput:
+				id: rpiPort
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				text: "Remote Code"
+			TextInput:
+				id: remoteCode
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveNetwork
+					text: 'Save'
+					text_size: self.width/2, None
+					halign: "center"
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height/2+self.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.2
+				
+	TabbedPanelItem:
+		text: 'Switch Codes'
+		id: switchCodes
+		GridLayout:
+			id: gridLayout
+			cols: 2
+			size: root.width * 0.8, root.height * 0.8
+			row_default_height: 65
+			row_force_default: True
+			
+			Label:
+				id: lblBtn1SwitchCode
+				text: "Button 1"
+			TextInput:
+				id: btn1SwitchCode
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn2SwitchCode
+				text: "Button 2"
+			TextInput:
+				id: btn2SwitchCode
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn3SwitchCode
+				text: "Button 3"
+			TextInput:
+				id: btn3SwitchCode
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn4SwitchCode
+				text: "Button 4"
+			TextInput:
+				id: btn4SwitchCode
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn5SwitchCode
+				text: "Button 5"
+			TextInput:
+				id: btn5SwitchCode
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			Label:
+				id: lblBtn6SwitchCode
+				text: "Button 6"
+			TextInput:
+				id: btn6SwitchCode
+				text: "00000"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveSwitchCodes
+					text: 'Save'
+					text_size: self.width/2, None
+					halign: "center"
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.1
+				
+	TabbedPanelItem:
+		text: 'Cron'
+		id: cron
+		GridLayout:
+			id: gridLayout
+			cols: 2
+			size: root.width * 0.8, root.height * 0.8
+			row_default_height: 80
+			row_force_default: True
+			
+			Label:
+				text: "Enabled:"
+			CheckBox:
+				id: cronEnabled
+			
+			Label:
+				text: "Turn ON at:"
+			TextInput:
+				id: cronTurnOn
+				text: "00.00"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+			
+			Label:
+				text: "Turn OFF at:"
+			TextInput:
+				id: cronTurnOff
+				text: "00.00"
+				multiline: False
+				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+				
+			Widget:
+				id: widget
+				size_hint: 1, 0.4
+				Button:
+					id: saveCron
+					text: 'Save'
+					text_size: self.width/2, None
+					halign: "center"
+					on_press: root.on_btnSaveConfig_click()
+					pos: self.parent.width-self.width/2, self.parent.height/2+self.height
+					width: self.parent.width/1.5
+					height: self.parent.height/1.2
+			
+	TabbedPanelItem:
+		text: 'About'
+		id: about
+		Label:
+			text: "Made by Michael Binder"
+    
