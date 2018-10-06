@@ -13,14 +13,14 @@ Supported hardware
 
 Most generic 433MHz capable modules connected via GPIO to a Raspberry Pi. (cost: ~2€)
 
-<img src="readme/433MHzRF.png" width="50%" height="50%">
+<img src="readme/433MHzRF.png" width="30%" height="30%">
 
 Compatibility
 ------------
 
 Generic 433MHz outlets. (cost: ~ 15€/3pcs)
 
-<img src="readme/433MHzoutlet.png" width="50%" height="50%">
+<img src="readme/433MHzoutlet.png" width="30%" height="30%">
 
 Supported Chipsets:
 
@@ -43,7 +43,7 @@ Installation (Incomplete)
 -   Turn your Raspberry Pi 3 off and connect the 433MHz RF-Module with your Raspberry Pi 3 (See: Wiring diagram)
 -   Turn your Raspberry Pi 3 on and run *rpi\_server.py*
 
-<img src="readme/rpi_setup.png" width="20%" height="20%">
+<img src="readme/rpi_setup.png" width="50%" height="50%">
 
 **Remote outlets:**
 
