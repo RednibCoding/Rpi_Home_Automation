@@ -43,7 +43,7 @@ Installation (Incomplete)
 -   Turn your Raspberry Pi 3 off and connect the 433MHz RF-Module with your Raspberry Pi 3 (See: Wiring diagram)
 -   Turn your Raspberry Pi 3 on and run *rpi\_server.py*
 
-<img src="readme/rpi_setup.png" width="50%" height="50%">
+<img src="readme/rpi_setup.png" width="70%" height="70%">
 
 **Remote outlets:**
 
