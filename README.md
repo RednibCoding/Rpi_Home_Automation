@@ -1,18 +1,22 @@
 Rpi Home Automation
+======
 
 Introduction
+------------
 
 Rpi Home Automation is a complete setup to automate your home via Raspberry Pi 3, a generic low-cost GPIO RF 433MHz module and generic RF 433 MHz outlets.
 
 The current state is not usable yet, as it is still under development – so is the README not complete!
 
 Supported hardware
+------------
 
 Most generic 433MHz capable modules connected via GPIO to a Raspberry Pi. (cost: ~2€)
 
 ![Alt text](readme/433MHzRF.png?raw=true "Title")
 
 Compatibility
+------------
 
 Generic 433MHz outlets. (cost: ~ 15€/3pcs)
 
@@ -29,15 +33,16 @@ Supported Chipsets:
 -   HS1527
 
 Installation (Incomplete)
+------------
 
-Raspberry Pi 3:
+Raspberry Pi 3::
 
 -   Install *Raspbian OS* on your Raspberry Pi 3
 -   Connect your Raspberry Pi 3 with your home network via WLAN
 -   Copy the file *rpi\_server* and *tcp.py* to your Raspberry Pi 3.
 -   Connect the 433MHz RF-Module with your Raspberry Pi 3 (See: Wiring diagram)
 
-Remote outlets:
+Remote outlets::
 
 Each remote outlet can be configured through dip switches. These have to be unique in order to identify them.
 
@@ -65,9 +70,11 @@ As *On* means 1 and *Off* means 0, the above example would translate to:
 So the unique code for this outlet would be 10100 10000.
 
 Wiring Diagram:
+---------------
 
 comming soon
 
 Configure Android App
+---------------------
 
 comming soon
