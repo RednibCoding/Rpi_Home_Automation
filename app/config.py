@@ -22,6 +22,7 @@ class Config(ConfigParser):
 		self._cronEnabled=False
 		self._cronTurnOn=0.0
 		self._cronTurnOff=0.0
+		self._btnsCronOnOff=[None]*6
 
 	def loadFile(self):
 		self.read(self._cfgFile)
@@ -55,6 +56,13 @@ class Config(ConfigParser):
 		self._cronEnabled=self.getboolean("Cron", "Enabled")
 		self._cronTurnOn=self.get("Cron", "Turn_On")
 		self._cronTurnOff=self.get("Cron", "Turn_Off")
+		# Btn Cron On Off
+		self._btnsCronOnOff[0]=self.getboolean("Cron", "btn1CronOnOff")
+		self._btnsCronOnOff[1]=self.getboolean("Cron", "btn2CronOnOff")
+		self._btnsCronOnOff[2]=self.getboolean("Cron", "btn3CronOnOff")
+		self._btnsCronOnOff[3]=self.getboolean("Cron", "btn4CronOnOff")
+		self._btnsCronOnOff[4]=self.getboolean("Cron", "btn5CronOnOff")
+		self._btnsCronOnOff[5]=self.getboolean("Cron", "btn6CronOnOff")
 
 	def update(self):
 		# Network
@@ -87,6 +95,13 @@ class Config(ConfigParser):
 		self.set("Cron", "Enabled", self._cronEnabled)
 		self.set("Cron", "Turn_On", self._cronTurnOn)
 		self.set("Cron", "Turn_Off", self._cronTurnOff)
+		# Btn Cron On Off
+		self.set("Cron", "btn1CronOnOff", self._btnsCronOnOff[0])
+		self.set("Cron", "btn2CronOnOff", self._btnsCronOnOff[1])
+		self.set("Cron", "btn3CronOnOff", self._btnsCronOnOff[2])
+		self.set("Cron", "btn4CronOnOff", self._btnsCronOnOff[3])
+		self.set("Cron", "btn5CronOnOff", self._btnsCronOnOff[4])
+		self.set("Cron", "btn6CronOnOff", self._btnsCronOnOff[5])
 
 	def saveFile(self, cfgFile):
 		with open(cfgFile, "w") as configfile:

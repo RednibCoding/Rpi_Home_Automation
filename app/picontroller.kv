@@ -326,46 +326,85 @@
 	TabbedPanelItem:
 		text: 'Cron'
 		id: cron
-		GridLayout:
-			id: gridLayout
-			cols: 2
-			size: root.width * 0.8, root.height * 0.8
-			row_default_height: 80
-			row_force_default: True
-			
-			Label:
-				text: "Enabled:"
-			CheckBox:
-				id: cronEnabled
-			
-			Label:
-				text: "Turn ON at:"
-			TextInput:
-				id: cronTurnOn
-				text: "00.00"
-				multiline: False
-				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
-			
-			Label:
-				text: "Turn OFF at:"
-			TextInput:
-				id: cronTurnOff
-				text: "00.00"
-				multiline: False
-				padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+		ScrollView:
+			GridLayout:
+				id: gridLayout
+				cols: 2
+				size: root.width * 0.8, root.height * 0.8
+				size_hint: None, None
+				row_default_height: 80
+				row_force_default: True
+				height: self.minimum_height
 				
-			Widget:
-				id: widget
-				size_hint: 1, 0.4
-				Button:
-					id: saveCron
-					text: 'Save'
-					text_size: self.width/2, None
-					halign: "center"
-					on_press: root.on_btnSaveConfig_click()
-					pos: self.parent.width-self.width/2, self.parent.height/2+self.height
-					width: self.parent.width/1.5
-					height: self.parent.height/1.2
+				Label:
+					text: "Enabled:"
+				CheckBox:
+					id: cronEnabled
+				
+				Label:
+					text: "Turn ON at:"
+				TextInput:
+					id: cronTurnOn
+					text: "00.00"
+					multiline: False
+					padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+				
+				Label:
+					text: "Turn OFF at:"
+				TextInput:
+					id: cronTurnOff
+					text: "00.00"
+					multiline: False
+					padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+					
+				Label:
+					id: lbl1CronOnOff
+					text: "Enabled:"
+				CheckBox:
+					id: btn1CronOnOff
+
+				Label:
+					id: lbl2CronOnOff
+					text: "Enabled:"
+				CheckBox:
+					id: btn2CronOnOff
+
+				Label:
+					id: lbl3CronOnOff
+					text: "Enabled:"
+				CheckBox:
+					id: btn3CronOnOff
+
+				Label:
+					id: lbl4CronOnOff
+					text: "Enabled:"
+				CheckBox:
+					id: btn4CronOnOff
+
+				Label:
+					id: lbl5CronOnOff
+					text: "Enabled:"
+				CheckBox:
+					id: btn5CronOnOff
+
+				Label:
+					id: lbl6CronOnOff
+					text: "Enabled:"
+				CheckBox:
+					id: btn6CronOnOff
+					
+				Widget:
+					id: widget
+					size_hint: 1, 0.4
+					Button:
+						id: saveCron
+						text: 'Save'
+						text_size: self.width/2, None
+						halign: "center"
+						on_press: root.on_btnSaveCron_click()
+						pos: self.parent.width-self.width/4, self.parent.height-self.height
+						width: self.parent.width/1.5
+						height: self.parent.height/1.2
 			
 	TabbedPanelItem:
 		text: 'About'

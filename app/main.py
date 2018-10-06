@@ -85,6 +85,25 @@ class ClientApp(TabbedPanel):
 		rpiIp=self._cfg._rpiIp
 		rpiPort=int(self._cfg._rpiPort)
 		self._tcp=Tcp(port=rpiPort, bufferLen=1024, ip=rpiIp)
+		
+	def on_btnSaveCron_click(self):
+		self.on_btnSaveConfig_click()
+		self.sendCronToPi()
+		
+		
+	def sendCronToPi(self):
+		msg="Cron:"
+		states=str(self.ids.cronEnabled.active)+"|"
+		states=states+str(self.ids.cronTurnOn.text)+"|"
+		states=states+str(self.ids.cronTurnOff.text)+"|"
+		states=states+str(self.ids.btn1CronOnOff.active)+"|"
+		states=states+str(self.ids.btn2CronOnOff.active)+"|"
+		states=states+str(self.ids.btn3CronOnOff.active)+"|"
+		states=states+str(self.ids.btn4CronOnOff.active)+"|"
+		states=states+str(self.ids.btn5CronOnOff.active)+"|"
+		states=states+str(self.ids.btn6CronOnOff.active)
+		msg=msg+states
+		self._tcp.sendMsg(msg)
 
 
 	def inputBoxesToCfg(self):
@@ -125,6 +144,13 @@ class ClientApp(TabbedPanel):
 		self._cfg._cronEnabled=self.ids.cronEnabled.active
 		self._cfg._cronTurnOn=self.ids.cronTurnOn.text
 		self._cfg._cronTurnOff=self.ids.cronTurnOff.text
+		# Btn Cron On Off
+		self._cfg._btnsCronOnOff[0]=self.ids.btn1CronOnOff.active
+		self._cfg._btnsCronOnOff[1]=self.ids.btn2CronOnOff.active
+		self._cfg._btnsCronOnOff[2]=self.ids.btn3CronOnOff.active
+		self._cfg._btnsCronOnOff[3]=self.ids.btn4CronOnOff.active
+		self._cfg._btnsCronOnOff[4]=self.ids.btn5CronOnOff.active
+		self._cfg._btnsCronOnOff[5]=self.ids.btn6CronOnOff.active
 
 	def cfgToInputBoxes(self):
 		# Network
@@ -178,6 +204,20 @@ class ClientApp(TabbedPanel):
 		self.ids.cronEnabled.active=self._cfg._cronEnabled
 		self.ids.cronTurnOn.text=self._cfg._cronTurnOn
 		self.ids.cronTurnOff.text=self._cfg._cronTurnOff
+		# Buttons Cron On Off
+		self.ids.btn1CronOnOff.active=self._cfg._btnsCronOnOff[0]
+		self.ids.btn2CronOnOff.active=self._cfg._btnsCronOnOff[1]
+		self.ids.btn3CronOnOff.active=self._cfg._btnsCronOnOff[2]
+		self.ids.btn4CronOnOff.active=self._cfg._btnsCronOnOff[3]
+		self.ids.btn5CronOnOff.active=self._cfg._btnsCronOnOff[4]
+		self.ids.btn6CronOnOff.active=self._cfg._btnsCronOnOff[5]
+		# Lables Cron On Off
+		self.ids.lbl1CronOnOff.text="Button "+self.ids.btn1.text
+		self.ids.lbl2CronOnOff.text="Button "+self.ids.btn2.text
+		self.ids.lbl3CronOnOff.text="Button "+self.ids.btn3.text
+		self.ids.lbl4CronOnOff.text="Button "+self.ids.btn4.text
+		self.ids.lbl5CronOnOff.text="Button "+self.ids.btn5.text
+		self.ids.lbl6CronOnOff.text="Button "+self.ids.btn6.text
 
 
 
