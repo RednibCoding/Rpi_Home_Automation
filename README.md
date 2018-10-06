@@ -43,11 +43,13 @@ Installation (Incomplete)
 -   Turn your Raspberry Pi 3 off and connect the 433MHz RF-Module with your Raspberry Pi 3 (See: Wiring diagram)
 -   Turn your Raspberry Pi 3 on and run *rpi\_server.py*
 
+<img src="readme/rpi_setup.png" width="20%" height="20%">
+
 **Remote outlets:**
 
 Each remote outlet can be configured through dip switches. These have to be unique in order to identify them.
 
-<img src="readme/dipswitch.png" width="50%" height="50%">
+<img src="readme/dipswitch.png" width="30%" height="30%">
 
 Each switch can have two states: *Up* and *Down*.
 
@@ -61,7 +63,7 @@ So in the example below, dip switch 1 and 3 are *On* and switch A is also *On*.
 
 Because A is *On*, B to E have to be *Off*.
 
-<img src="readme/dipswitch_example.png" width="50%" height="50%">
+<img src="readme/dipswitch_example.png" width="30%" height="30%">
 
 As *On* means 1 and *Off* means 0, the above example would translate to:
 ```
