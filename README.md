@@ -40,10 +40,10 @@ Installation (Incomplete)
 -   Install *Raspbian OS* on your Raspberry Pi 3
 -   Connect your Raspberry Pi 3 with your home network via WLAN
 -   Copy the folder *rpi\_server* to your Raspberry Pi 3.
--   Turn your Raspberry Pi 3 off and connect the 433MHz RF-Module with your Raspberry Pi 3 (See: Wiring diagram)
--   Turn your Raspberry Pi 3 on and run *rpi\_server.py*
+-   Turn off your Raspberry Pi 3 and connect the 433MHz RF-Module with your Raspberry Pi 3 (See: Wiring diagram)
+-   Turn on your Raspberry Pi 3 and run *rpi\_server.py*
 
-<img src="readme/rpi_setup.png" width="110%" height="110%">
+<img src="readme/rpi_setup.png" width="120%" height="120%">
 
 **Remote outlets:**
 
