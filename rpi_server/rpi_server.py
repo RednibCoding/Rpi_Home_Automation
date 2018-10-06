@@ -55,6 +55,9 @@ try:
 				if oPins[i]:
 					if isOutputPinHigh(oPins[i]):
 						gpio.output(oPins[i], gpio.LOW)
+						
+		elif "Cron:" in msg:
+			print("Cron job changed")
 			
 
 		print("Incoming message: "+msg)
