@@ -108,6 +108,12 @@ Configure Android App
 comming soon
 ```
 
+Setup test enviorment:
+----------------------
+1. Create an venv & activate it
+2. Install dependencies with: python setup.py develop
+3. Run tests: python setup.py test
+
 License
 ---------------
 This project is released under:
