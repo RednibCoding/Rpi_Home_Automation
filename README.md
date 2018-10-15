@@ -8,6 +8,7 @@ Rpi Home Automation is a complete setup to automate your home via Raspberry Pi 3
 The setup includes:
 - rpi server (a script that handles messages sent from the app to control client devices)
 - App (app to control the Raspberry Pi 3 B/B+ (rpi) )
+- a generic python script for a wlan-client-device (this script can be adjusted to fulfill the desired needs of the client device)
 
 Devices can be controlled via rf (433MHz) and/or WLAN.
 In order to control a device through rf, a RF 433MHz module is needed (See: Wiring diagramm)
@@ -16,7 +17,8 @@ Controlled devices can be:<br/><br/>
 **rf:**
 - generic low-cost GPIO RF 433MHz modules
 - generic RF 433 MHz outlets
-- any other 433 MHz devices that lets you pick out the transmitted code
+- rf relais 433MHz
+- any other 433 MHz devices that lets you pick out or set the transmitted code
 
 **wlan:**
 - another Raspberry Pi 3 B/B+
