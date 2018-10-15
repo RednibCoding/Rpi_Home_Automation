@@ -97,3 +97,25 @@ Configure Android App
 ```
 comming soon
 ```
+
+License
+---------------
+This project is released under:
+```
+Creative Commons Attribution-NonCommercial 4.0 International Public License
+```
+Summary: 
+```
+Can:
+ - Distribute 
+ - Modify
+ 
+Cannot:
+ - Commercial Use 
+ - Sublicense
+ 
+Must:
+ - Give Credit 
+ - Include Copyright 
+ - State Changes
+ ```
