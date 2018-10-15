@@ -119,3 +119,4 @@ Must:
  - Include Copyright 
  - State Changes
  ```
+ View [LICENSE](LICENSE) for more infos.
