@@ -77,8 +77,18 @@ So the unique code for this outlet would be:
 
 Wiring Diagram:
 ---------------
+
+<img src="readme/rpi_rf_wiring.png" width="50%" height="50%">
+
 ```
-comming soon
+gpio 17 --- tx data
+5v      --- tx 5v
+GND     --- tx GND
+```
+```
+gpio 27 --- rx data
+5v      --- rx 5v
+GND     --- rx GND
 ```
 
 Configure Android App
