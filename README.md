@@ -4,33 +4,41 @@ Rpi Home Automation
 Introduction
 ------------
 
-Rpi Home Automation is a complete setup to automate your home via Raspberry Pi 3 B/B+, a generic low-cost GPIO RF 433MHz module and generic RF 433 MHz outlets.
+Rpi Home Automation is a complete setup to automate your home via Raspberry Pi 3 B/B+.<br/><br/>
+The setup includes:
+- rpi server (a script that handles messages sent from the app to control client devices)
+- App (app to control the Raspberry Pi 3 B/B+ (rpi) )
+
+Devices can be controlled via rf (433MHz) and/or WLAN.
+In order to control a device through rf, a RF 433MHz module is needed (See: Wiring diagramm)
+
+Controlled devices can be:<br/><br/>
+**rf:**
+- generic low-cost GPIO RF 433MHz modules
+- generic RF 433 MHz outlets
+- any other 433 MHz devices that lets you pick out the transmitted code
+
+**wlan:**
+- another Raspberry Pi 3 B/B+
+- Pi zero
+- esp8266
+- any other programmable device connected to the same network
 
 The current state is not usable yet, as it is still under development – so is the README not complete!
 
 Supported hardware
 ------------
-
-Most generic 433MHz capable modules connected via GPIO to a Raspberry Pi. (cost: ~2€)
+**rf:**
+- Most generic 433MHz capable modules connected via GPIO to a Raspberry Pi. (cost: ~2€)
 
 <img src="readme/433MHzRF.png" width="30%" height="30%">
 
 Compatibility
 ------------
-
-Generic 433MHz outlets. (cost: ~ 15€/3pcs)
+**rf:**
+- Generic 433MHz outlets. (cost: ~ 15€/3pcs)
 
 <img src="readme/433MHzoutlet.png" width="30%" height="30%">
-
-Supported Chipsets:
-
--   SC5262 / SC5272
--   HX2262 / HX2272
--   PT2262 / PT2272
--   EV1527
--   RT1527
--   FP1527
--   HS1527
 
 Installation (Incomplete)
 ------------
