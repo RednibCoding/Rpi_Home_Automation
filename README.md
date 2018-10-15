@@ -81,14 +81,15 @@ Wiring Diagram:
 <img src="readme/rpi_rf_wiring.png" width="40%" height="40%">
 
 ```
-gpio 17 --- tx data
-5v      --- tx 5v
-GND     --- tx GND
-```
-```
-gpio 27 --- rx data
-5v      --- rx 5v
-GND     --- rx GND
+TX:
+   GND > GND
+   VCC > 5V
+  DATA > PIN 11 (GPIO17)
+
+RX:
+   VCC > 5V
+   GND > GND
+   DATA > PIN 13 (GPIO27)
 ```
 
 Configure Android App
