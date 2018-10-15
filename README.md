@@ -78,7 +78,7 @@ So the unique code for this outlet would be:
 Wiring Diagram:
 ---------------
 
-<img src="readme/rpi_rf_wiring.png" width="30%" height="30%">
+<img src="readme/rpi_rf_wiring.png" width="40%" height="40%">
 
 ```
 gpio 17 --- tx data
