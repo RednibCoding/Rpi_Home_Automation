@@ -26,7 +26,6 @@ class RfButton(DeviceButton):
     def click(self):
         '''Click Event of button'''
         # TODO: Send code
-        print('test')
         self.log.info(self.switch_code)
 
 class WifiButton(Button):
