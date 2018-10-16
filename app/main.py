@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 """
         main.py
         
@@ -13,6 +12,7 @@ description:    Main client app.
 """
 
 from collections import defaultdict
+from logging import getLogger
 import json
 
 import kivy
@@ -35,7 +35,6 @@ from buttons import (
     WifiButton,
 )
 from expections import ButtonConfigEntryError
-from logger import getLogger
 
 
 KIVY_VERSION = '1.0.6'  # replace with current kivy version !

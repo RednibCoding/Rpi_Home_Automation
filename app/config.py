@@ -7,7 +7,6 @@ description:    Handles loading and saving the "config.ini", needed by the app
 """
 
 from configparser import SectionProxy
-from logging import getLogger
 import json
 
 from kivy.config import ConfigParser
