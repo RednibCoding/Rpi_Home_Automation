@@ -16,7 +16,7 @@ class DeviceButton(Button):
 
 class RfButton(DeviceButton):
     '''RfButton class'''
-    
+
     def __init__(self, **options):
         self.switch_code = options['code']
         del(options['code'])

@@ -1,0 +1,79 @@
+ScrollView:
+    FloatLayout:
+        Button:
+            text: "reload"
+            pos: self.parent.width - self.width, self.parent.height - self.height
+            size_hint: None, None
+            size: 60, 30
+            on_press: root.reload()
+        # Back button
+        Button:
+            text: 'Back'
+            size_hint: None, None
+            size: 60, 30
+            pos: 50, 50
+            on_press: root.back()
+        # SwitchCode
+        Label:
+            text: 'Switch-Code:'
+            size_hint: None, None
+            size: 100, 30
+            pos: 20, self.parent.height - 40
+        TextInput:
+            id: button_switch_code
+            size_hint: None, None
+            size: 200, 30
+            pos: 120, self.parent.height - 40
+            multiline: False
+        # Name
+        Label:
+            text: 'Name:'
+            size_hint: None, None
+            size: 100, 30
+            pos: 20, self.parent.height - 80
+        TextInput:
+            id: button_name
+            size_hint: None, None
+            size: 200, 30
+            pos: 120, self.parent.height - 80
+            multiline: False
+        # Size x
+        Label:
+            text: 'x:'
+            size_hint: None, None
+            size: 100, 30
+            pos: 20, self.parent.height - 120
+        TextInput:
+            id: button_x
+            size_hint: None, None
+            size: 50, 30
+            pos: 120, self.parent.height - 120
+            multiline: False
+        # Size y
+        Label:
+            text: 'y:'
+            size_hint: None, None
+            size: 100, 30
+            pos: 170, self.parent.height - 120
+        TextInput:
+            id: button_y
+            size_hint: None, None
+            size: 50, 30
+            pos: 270, self.parent.height - 120
+            multiline: False
+        # Create Button
+        Button:
+            text: 'Create'
+            size_hint: None, None
+            size: 200, 30
+            pos: 120, self.parent.height - 160
+            multiline: False
+            on_press: root.create()
+        # Error Label
+        Label:
+            id: error_label
+            text: ''
+            size_hint: None, None
+            size: 50, 100
+            pos: 170, self.parent.height - 240
+

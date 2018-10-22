@@ -2,7 +2,7 @@
 
 """
         main.py
-        
+
 author:                 Michael Binder
 dependencies:   kivy, tcp, config, picontroller.kv
 description:    Main client app.
@@ -16,11 +16,9 @@ from logging import getLogger
 import json
 
 import kivy
+from kivy.lang import Builder
 from kivy.app import App
-from kivy.uix.gridlayout import (
-    GridLayout,
-    ReferenceListProperty
-)
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.tabbedpanel import (
@@ -35,39 +33,38 @@ from buttons import (
     WifiButton,
 )
 from expections import ButtonConfigEntryError
+from views.edit import EditView
 
 
 KIVY_VERSION = '1.0.6'  # replace with current kivy version !
 
 RFBUTTON_TYPE = 'rfbutton'
 WIFIBUTTON_TYPE = 'wifibutton'
+SPECIALBUTTON_TYPE = 'specialbutton'
 
 
 class ClientApp(TabbedPanel):
     def __init__(self):
+        self.tabs = {}
+        self.log = getLogger()
         kivy.require(KIVY_VERSION)
         super(ClientApp, self).__init__(do_default_tab=False)
         self.cfg = Config("config.ini")
         self.build_view()
-        self.log = getLogger()
 
     def restore_default(self):
         '''Restore default config'''
         with open('default.cfg', 'rb') as defaultcfg:
             with open('config.ini', 'wb') as cfg:
-                cfg.write(defaultcfg.read(-1))
+                cfg.write(defaultcfg.read())
         self.__init__()
-
-    def save_view(self):
-        '''save view to config'''
-        save_cfg = {}
-        for tab in self.get_tab_list():
-            pass
 
     def build_view(self):
         '''Build view'''
+        self.log.info('Building view...')
         # Remove tabs
         self.clear_tabs()
+        self.clear_widgets()
 
         # Add Tabs from config
         for tab_key in self.cfg['Tabs']:
@@ -75,20 +72,17 @@ class ClientApp(TabbedPanel):
 
             # Tab
             tpi = TabbedPanelItem(**tab_cfg)
+            self.tabs[tab_key] = tpi
+            # Add Tab to View
+            self.add_widget(tpi)
 
             # ScrollView
             sw = ScrollView()
             tpi.add_widget(sw)
 
             # Grid Layout
-            gl = GridLayout()
-            sw.add_widget(gl)
-            gl.id = 'gridLayout'
-            gl.cols = 2
-            gl.size_hint = (1, 1)
-            gl.size = gl.parent.size
-            gl.pos = gl.parent.pos
-            gl.height = gl.minimum_height
+            fl = FloatLayout()
+            sw.add_widget(fl)
 
             # Add Buttons
             for button_key in self.cfg['Buttons']:
@@ -100,30 +94,19 @@ class ClientApp(TabbedPanel):
                         button = RfButton(**buttoncfg)
                     elif buttoncfg['type'] == WIFIBUTTON_TYPE:
                         button = WifiButton(**buttincfg)
+                    elif buttoncfg['specialbutton'] == SPECIALBUTTON_TYPE:
+                        pass
                     else:
                         raise ButtonConfigEntryError('Invalid button type for button {}'.format(button_key))
-                    gl.add_widget(button)
+                    fl.add_widget(button)
 
-            # Add Tab to View
-            self.add_widget(tpi)
 
-    def on_btnSaveCron_click(self):
-        self.on_btnSaveConfig_click()
-        self.sendCronToPi()
+        # Add edit Tab
+        edit = EditView(self)
+        self.add_widget(edit.tpi)
 
-    def sendCronToPi(self):
-        msg = "Cron:"
-        states = str(self.ids.cronEnabled.active)+"|"
-        states = states+str(self.ids.cronTurnOn.text)+"|"
-        states = states+str(self.ids.cronTurnOff.text)+"|"
-        states = states+str(self.ids.btn1CronOnOff.active)+"|"
-        states = states+str(self.ids.btn2CronOnOff.active)+"|"
-        states = states+str(self.ids.btn3CronOnOff.active)+"|"
-        states = states+str(self.ids.btn4CronOnOff.active)+"|"
-        states = states+str(self.ids.btn5CronOnOff.active)+"|"
-        states = states+str(self.ids.btn6CronOnOff.active)
-        msg = msg+states
-        self._tcp.sendMsg(msg)
+        # Select first tab
+        self.switch_to(self.tab_list[1])
 
 
 class PiControllerApp(App):
