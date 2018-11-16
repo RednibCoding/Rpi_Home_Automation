@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 
 from RPi import GPIO
 import time
@@ -71,6 +71,17 @@ class RFDevice:
 			self.tx_enabled=False
 			print("TX disabled")
 		return True
+		
+	# Send
+	def send(self, code):
+		self.enable_tx()
+		success=self.tx_code(code)
+		#self.cleanup()
+		return(success)
+		
+	# Receive
+	def recv(self):
+		pass
 
 	# Send a decimal code
 	def tx_code(self, code):
