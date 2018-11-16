@@ -1,7 +1,7 @@
 """
         config.py
         
-author:                 Michael Binder
+author:         Michael Binder
 dependencies:   Configparser
 description:    Handles loading and saving the "config.ini", needed by the app
 """
